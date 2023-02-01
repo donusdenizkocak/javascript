@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Function</title>
+</head>
+<body>
+    
+
+    <script>
+   //array-function
+
+   //FİLTER   istenilen sartlara uyan degerleri filtreler ve yeni bir dizi olarak verir
+
+   const sayilar = [1,3,4,5,7,8,67,34,0];
+   const tekSayilar =[];
+   
+    // for(let sayi of sayilar){
+    //     if(sayi%2==1){
+    //       tekSayilar.push(sayi);
+    //     }
+    // }
+    // console.log(tekSayilar);
+
+    const tekSayiKontrol = (sayi) => sayi%2==1;
+    const tekSayiFilter =sayilar.filter(tekSayiKontrol);
+    console.log(tekSayiFilter);
+    console.log("filtreli tek sayilar " + tekSayiFilter);
+
+    const tekSayiFilteKisa = sayilar.filter( (sayi) => sayi%2==1);
+    console.log(tekSayiFilteKisa);
+
+    //MAP o degeri saglayıp sağlamadıgına bakar ve tru veya false değeri dönderir
+
+    const tekSayilarMAP = sayilar.map((sayi) => sayi%2 ==1)
+
+    console.log(tekSayilarMAP)
+
+
+  const urunler=[
+    {urunAdi:"Iphone11", fiyati:"18900"},
+    {urunAdi:"Iphone12", fiyati:"19500"},
+    {urunAdi:"Iphone13", fiyati:"20000"},
+    {urunAdi:"Iphone13 Pro", fiyati:"22000"}
+  ]
+
+
+    </script>
+</body>
+</html>
