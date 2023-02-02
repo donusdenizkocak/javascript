@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread oporator</title>
+</head>
+<body>
+    
+
+
+<script>
+
+
+// SPREAD OPORETORUN DİZİ İÇİNDE KULLANIMI
+const msj = ["benim","adım","deniz"];
+
+let sonuc ="";
+for (let x of msj){
+   sonuc+=x + " ";
+}
+console.log(sonuc);
+
+
+console.log(...msj);
+
+const dizi1=["bir","iki","üç"];
+const dizi2=["dört","beş","altı"];
+
+const dizi3= [dizi1, dizi2];
+
+console.log(dizi3);
+const dizi4= [...dizi1, ...dizi2];
+
+console.log(dizi4);
+
+const sayilar1 =[1,2,3];
+//const sayilar2= sayilar1;   //referans copy
+
+const sayilar2 =[...sayilar1];    //value copy
+
+sayilar2[0]=10;
+console.log(sayilar1, sayilar2);
+
+//SPREAD OPERATORUN OBJE İÇİNDE KULLANIMI
+
+const user={
+    username:"Deniz",
+    email:"info@gmail.com"
+}
+
+const address= {
+    username:"derya",     //birleşmede son yazılan daha etkindir
+    city:"Ankara"
+}
+console.log({...user, ...address});
+
+//REST PARAMETERS  => eger spread operator bir function da kullanılıyorsa adı rest parameters olur
+
+function toplam(...args){    //buraya istediğimiz kadar parametre girmeye izin verir
+    let sonuc =0;
+
+    for(let sayi of args){
+        sonuc += sayi;
+    }
+  return sonuc;  
+}
+
+console.log(toplam(3,5,8));
+
+console.log(toplam(5,13,4,7,3));
+
+function bilgiGoster(isim, soyisim, ...adres){
+    console.log(isim, soyisim, adres)
+}
+
+bilgiGoster("deniz","derya","istanbul","kadıkoy","no:143")
+
+
+
+</script>    
+</body>
+</html>

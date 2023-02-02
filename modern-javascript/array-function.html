@@ -44,7 +44,22 @@
     {urunAdi:"Iphone12", fiyati:"19500"},
     {urunAdi:"Iphone13", fiyati:"20000"},
     {urunAdi:"Iphone13 Pro", fiyati:"22000"}
-  ]
+  ];
+
+  //const urun = urunler.map(urun =>urun);
+  const urun = urunler.map(urun =>urun.urunAdi);
+  console.log(urun);
+  // const filtrelenenUrunler = urunler.filter(urun => urun.fiyati >= 20000);
+  // console.log(filtrelenenUrunler);
+  // const sonuc = filtrelenenUrunler.map(urun => urun.urunAdi);
+
+  //const sonuc = urunler.filter(urun => urun.fiyati >= 20000).map(urun => urun.urunAdi);
+
+  const sonuc = urunler.find(urun => urun.fiyati > 19000);
+   console.log(sonuc);
+
+   const yeniurun = urunler.findIndex(urun => urun.fiyati > 20000);
+    console.log("yeni ürün: "  + urunler[yeniurun].urunAdi);
 
 
     </script>
